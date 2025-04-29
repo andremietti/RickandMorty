@@ -27,8 +27,8 @@ class SceneView: UIView, ConfigurableView {
     }
 
     func setupView() {
-        backgroundColor = .white
-        contentView.backgroundColor = .white
+        backgroundColor = .clear
+        contentView.backgroundColor = .clear
 
         setupContentView()
         buildViewHierarchy()

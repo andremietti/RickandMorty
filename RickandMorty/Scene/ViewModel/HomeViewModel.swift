@@ -7,34 +7,60 @@
 //
 //
 import Foundation
-
-// MARK: - Protocols
-protocol HomeViewModelInput {
-    /// put your input methods from ViewController
-}
-
-protocol HomeViewModelOutput {
-    var showLoading: Observable<Bool> { get }
-    var showError: Observable<(title: String, message: String)> { get }
-}
-
-protocol HomeViewModelCoordinating {
-    func closeScene()
-}
-
-protocol HomeViewModelProtocol: HomeViewModelInput, HomeViewModelOutput {}
+import Combine
 
 class HomeViewModel {
 
     // MARK: - Properties
-    private let coordinator: HomeViewModelCoordinating
-
+    @Published var characters: Characters?
+    @Published var resultInfo: ResultInfo?
+    @Published var nextPage = 0
+    @Published private var useCase: CharacterUseCase
+    private var cancellables = Set<AnyCancellable>()
+    private var actualPage: Int = 0
+    
+    
     // MARK: - Setup
-    init(coordinator: HomeViewModelCoordinating) {
-        self.coordinator = coordinator
+    init(useCase: CharacterUseCase = CharacterUseCase()) {
+        self.useCase = useCase
     }
+        
+}
 
-    func closeScene() {
-        coordinator.closeScene()
+
+//MARK: - Functional methods
+extension HomeViewModel {
+    
+    func fecthCharacters() {
+        useCase.getCharacters()
+        useCase.$requestModel
+            .sink { model in
+                if self.characters == nil {
+                    self.characters = model?.results
+                } else {
+                    guard let results = model?.results else { return }
+                    self.characters?.append(contentsOf: results)
+                }
+                
+                if let next = model?.info.next?.last {
+                    self.nextPage = Int(next.description).defaultValue
+                }
+            }
+            .store(in: &cancellables)
+    }
+    
+//TODO: - Search by name
+//    func fecthCharacterByName(name: String) {
+//        useCase.getCharacterByName(name: name)
+//        useCase.$requestModel
+//            .sink { results in
+//                
+//            }
+//            .store(in: &cancellables)
+//    }
+    
+    func loadMoreContent() {
+        useCase.loadNextPage(page: self.nextPage)
+        actualPage = nextPage
     }
 }

@@ -7,10 +7,7 @@
 
 import Foundation
 
-// MARK:- Fluent Interface
-
-// MARK: - With
-
+//MARK: - Fluent Interface
 public protocol With {}
 
 extension With where Self: AnyObject {

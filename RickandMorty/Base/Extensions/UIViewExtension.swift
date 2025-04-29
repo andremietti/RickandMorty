@@ -7,8 +7,6 @@
 
 import UIKit
 
-// MARK: Constraints
-
 public extension UIView {
     func constraint(_ closure: (UIView) -> [NSLayoutConstraint]) {
         translatesAutoresizingMaskIntoConstraints = false
@@ -41,6 +39,13 @@ public extension UIView {
         ]
         NSLayoutConstraint.activate(constraints)
     }
-    
+ 
+    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+         let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+         let mask = CAShapeLayer()
+         mask.path = path.cgPath
+         layer.mask = mask
+     }
+
 }
 
