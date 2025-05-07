@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E53BAE52DBC3AEA007F9695 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 0E53BAE42DBC3AEA007F9695 /* Networking */; };
+		0E3F09DF2DCAE4B300D2CFFD /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 0E3F09DE2DCAE4B300D2CFFD /* Networking */; };
 		0E94A64E2DC06D9200120AB0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0E94A64D2DC06D9200120AB0 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
@@ -35,10 +35,10 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		0E94A6412DBFCAD500120AB0 /* Exceptions for "Resources" folder in "RickandMorty" target */ = {
+		0E3F09DC2DCAE3C800D2CFFD /* Exceptions for "Resources" folder in "RickandMorty" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Resources/Info.plist,
+				Info.plist,
 			);
 			target = 0EDE896F2DA83105005C1A4A /* RickandMorty */;
 		};
@@ -48,7 +48,7 @@
 		0E53BAF62DBFC5E1007F9695 /* Resources */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				0E94A6412DBFCAD500120AB0 /* Exceptions for "Resources" folder in "RickandMorty" target */,
+				0E3F09DC2DCAE3C800D2CFFD /* Exceptions for "Resources" folder in "RickandMorty" target */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -75,8 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E3F09DF2DCAE4B300D2CFFD /* Networking in Frameworks */,
 				0E94A64E2DC06D9200120AB0 /* Kingfisher in Frameworks */,
-				0E53BAE52DBC3AEA007F9695 /* Networking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,8 +147,8 @@
 			);
 			name = RickandMorty;
 			packageProductDependencies = (
-				0E53BAE42DBC3AEA007F9695 /* Networking */,
 				0E94A64D2DC06D9200120AB0 /* Kingfisher */,
+				0E3F09DE2DCAE4B300D2CFFD /* Networking */,
 			);
 			productName = RickandMorty;
 			productReference = 0EDE89702DA83105005C1A4A /* RickandMorty.app */;
@@ -233,8 +233,8 @@
 			mainGroup = 0EDE89672DA83105005C1A4A;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				0E53BAE32DBC3AEA007F9695 /* XCRemoteSwiftPackageReference "Networking" */,
 				0E94A64C2DC06D9200120AB0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				0E3F09DD2DCAE4B300D2CFFD /* XCRemoteSwiftPackageReference "Networking" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 0EDE89712DA83105005C1A4A /* Products */;
@@ -595,7 +595,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0E53BAE32DBC3AEA007F9695 /* XCRemoteSwiftPackageReference "Networking" */ = {
+		0E3F09DD2DCAE4B300D2CFFD /* XCRemoteSwiftPackageReference "Networking" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/andremietti/Networking";
 			requirement = {
@@ -614,9 +614,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0E53BAE42DBC3AEA007F9695 /* Networking */ = {
+		0E3F09DE2DCAE4B300D2CFFD /* Networking */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0E53BAE32DBC3AEA007F9695 /* XCRemoteSwiftPackageReference "Networking" */;
+			package = 0E3F09DD2DCAE4B300D2CFFD /* XCRemoteSwiftPackageReference "Networking" */;
 			productName = Networking;
 		};
 		0E94A64D2DC06D9200120AB0 /* Kingfisher */ = {
