@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct ResultInfo: Decodable {
     var count: Int
     var pages: Int

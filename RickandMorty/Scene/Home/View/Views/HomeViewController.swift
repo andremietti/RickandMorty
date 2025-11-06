@@ -26,8 +26,8 @@ class HomeViewController: UIViewController {
 
     // MARK: - ViewConreoller LifeCycle
     init(viewModel: HomeViewModel = HomeViewModel()) {
-        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        self.viewModel = viewModel
     }
     
     init() {
@@ -47,16 +47,14 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         rootView.delegate = self
         self.view.backgroundColor = UIColor(red: 40.0/255.0, green: 43.0/255.0, blue: 50.0/255.0, alpha: 1.0)
-        self.navigationController?.navigationBar.backgroundColor = .white
-        
-        self.navigationController?.navigationBar.topItem?.title = "The Rick and Morty"
-        
+        navigationItem.backButtonTitle = ""
+        self.navigationItem.title = "The Rick and Morty"
+
         setupObservables()
         loadData()
     }
-
+    
 }
-
 
 // MARK: - Functional methods
 extension HomeViewController {
@@ -95,5 +93,9 @@ extension HomeViewController: HomeViewDelegate {
     
     func loadMoreData() {
         viewModel.loadMoreContent()
+    }
+    
+    func didTapOnCharacter(character: Character) {
+        coordinator?.didShowDetail(character: character)
     }
 }

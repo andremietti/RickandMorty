@@ -19,14 +19,11 @@ class HomeViewModel {
     private var cancellables = Set<AnyCancellable>()
     private var actualPage: Int = 0
     
-    
     // MARK: - Setup
     init(useCase: CharacterUseCase = CharacterUseCase()) {
         self.useCase = useCase
     }
-        
 }
-
 
 //MARK: - Functional methods
 extension HomeViewModel {

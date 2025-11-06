@@ -19,8 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let _ = (scene as? UIWindowScene) else { return }
         
-        let navigation = UINavigationController()
-        coordinator = MainCoordinator(navigationController: navigation)
+        let navigation = BaseNavigationController()
+        let factory = MainFactory()
+        coordinator = MainCoordinator(navigationController: navigation, factory: factory)
         coordinator?.start()
         
         window?.rootViewController = navigation

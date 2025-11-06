@@ -21,14 +21,12 @@ struct Character: Decodable {
     var image: String
     var episode: [String]
     var url: String
+    var created: String
+    
+    var createdCharacter: String? {
+        let date = created.formatToDefault()
+        return date?.stringFromDate()
+    }
 }
 
-struct CharacterLocation: Codable {
-    var name: String
-    var url: String
-}
-
-struct CharactersData: Decodable {
-    var results: [Character]
-}
 

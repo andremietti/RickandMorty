@@ -11,9 +11,10 @@ import Foundation
 import UIKit
 import Combine
 
-public protocol HomeViewDelegate: AnyObject {
+protocol HomeViewDelegate: AnyObject {
     func refreshTable()
     func loadMoreData()
+    func didTapOnCharacter(character: Character)
 }
 
 class HomeView: SceneView {
@@ -49,6 +50,7 @@ class HomeView: SceneView {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = .clear
         $0.addSubview(refreshControl)
+        $0.rowHeight = UITableView.automaticDimension
     }
     
     
@@ -83,7 +85,6 @@ class HomeView: SceneView {
             $0.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             $0.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ]}
-
     }
     
 }
@@ -113,7 +114,8 @@ extension HomeView {
 extension HomeView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //            delegate?.didTapOnCharacter...
+        guard let character = characters?[indexPath.row] else { return }
+        delegate?.didTapOnCharacter(character: character)
     }
 }
 
@@ -147,7 +149,7 @@ extension HomeView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140.0
+        return UITableView.automaticDimension
     }
     
 }
