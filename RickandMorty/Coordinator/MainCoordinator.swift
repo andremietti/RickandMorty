@@ -18,12 +18,10 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let homeViewController = factory.makeHomeViewController(coordinator: self)
-        navigationController.pushViewController(homeViewController, animated: true)
+        navigationController.pushViewController(factory.makeHomeViewController(coordinator: self), animated: true)
     }
     
     func didShowDetail(character: Character) {
-        let detailViewController = factory.makeDetailViewController(coordinator: self, character: character)
-        navigationController.pushViewController(detailViewController, animated: true)
+        navigationController.pushViewController(factory.makeDetailViewController(coordinator: self, character: character), animated: true)
     }
 }

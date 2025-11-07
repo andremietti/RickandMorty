@@ -7,16 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "61919E61-CA72-446A-A6B8-72893720BCE7"
+            uuid = "F8DEA9C1-3908-4F84-A8CF-A5E01DFF759D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RickandMorty/Scene/Home/View/Cells/CharacterView.swift"
+            filePath = "RickandMorty/Scene/Home/View/Views/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "setImage(imageUrl:)"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "didTapOnCharacter(character:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E3C91658-EFA5-416D-8591-54D4B3614075"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RickandMorty/Coordinator/MainCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "didShowDetail(character:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
